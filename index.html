@@ -1,0 +1,54 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="style.css">
+    <script src="https://kit.fontawesome.com/3c9b15b207.js" crossorigin="anonymous"></script>
+    <title>ToDoList</title>
+</head>
+<body>
+    <!-- 투두리스트 -->
+    <div class="ToDoList">
+        <header class="header-nav">
+        <span id="big-title">To Do List</span>
+            <span id="complet-number">Complete</span>
+            <span id="complete-view"></span>
+            <span id="object-slash">/</span>
+            <input type='text' id="object-view"></input>
+        </header>
+        <main class="todolist-body">
+            <input type="checkbox" id="check-box" name="Work check" onclick="selectAll(this)"> </input>
+            <span id="date-box">Date</span>
+            <span id="work-list-box">Work</span>
+        </main>
+
+
+        <table class="todolist-main" style="border: 1px solid; border-collapse: collapse;">
+               
+                <tbody id="tableshow"></tbody>
+                <tr>
+                    <td>
+                    </td>
+                </tr>
+        </table>
+
+
+
+        <footer class="footer-bar">
+            <input type="button" value="Add Row" onclick='addRow()'></input>
+            <input type="button" value="Del Row" onclick='delRow()'></input>
+        </footer>
+    </div>    
+
+<!-- 메모장 -->
+    <div class="MemoNotr">
+
+    </div>
+
+
+</body>
+<script src="app.js"></script>
+
+</html>
