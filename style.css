@@ -1,2 +1,8 @@
 @import "reset.css";
 @import "todolist.css";
+@import "memo.css";
+
+body{
+    display: flex;
+
+}

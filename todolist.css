@@ -1,14 +1,11 @@
-body{
+
+.ToDoList{
+    background-color: azure;
     margin-top:50px;
     margin-left:25px;
     width: 500px;
     border: 1px solid black;
     
-}
-
-.ToDoList{
-    background-color: azure;
-    margin:10px;
 }
 
 .header-nav{

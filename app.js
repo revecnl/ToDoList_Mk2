@@ -4,13 +4,13 @@ function addRow() {
     object = document.getElementById("tableshow").insertRow();
 
     let object_check_box = object.insertCell();
-        object_check_box.innerHTML = "<input id='todo_check_box' type='checkbox' name='Work check' onclick='getcount()'/>";
+        object_check_box.innerHTML = "<input id='todo_check_box' type='checkbox' name='Work check inner' onclick='getcount()'/>";
 
     let object_todo_date_box = object.insertCell();
         object_todo_date_box.innerHTML = "<input id='todo_date' type='date'/>";
 
     let object_work_list = object.insertCell();
-        object_work_list.innerHTML = "<input id='todo_work_list' type='text' name='Work list' placeholder='write your job' size='35' maxlength='50'>" 
+        object_work_list.innerHTML = "<input id='todo_work_list' type='text' name='Work list' placeholder='write your job' size='40' maxlength='50'>" 
     
     let object_save = object.insertCell();
         object_save.innerHTML = "<input type='button' id='todo_save' name='summit' onclick='alertsave()' value='Save' ></input>"
@@ -26,7 +26,7 @@ function addRow() {
 
 //체크 갯수 올리기
 function getcount(){
-    const query = 'input[name="Work check"]:checked';
+    const query = 'input[name="Work check inner"]:checked';
     const selected = document.querySelectorAll(query);
 
     const selectedcount =
@@ -38,29 +38,51 @@ function getcount(){
 
 //항목 삭제하기
 function delRow(){
-    let query = document.getElementById("tableshow");
-    for(var i = 0; i<query.rows.length;i++){
-        var chkbox = query.rows[i].cells[0].childNodes[0].checked;
+    let miuns = document.getElementById("tableshow");
+    for(var i = 0; i<miuns.rows.length;i++){
+        var chkbox = miuns.rows[i].cells[0].childNodes[0].checked;
 
     if(chkbox){
-        query.deleteRow(i);
+        miuns.deleteRow(i>0);
         i--;
         }
     }
+
+
     
 }
 
 //체크박스 전체선택
-function selectAll(selectAll){
-    const checkboxes 
-    =document.querySelectorAll('input[type="checkbox"]');
 
-    checkboxes.forEach((checkbox) => {
-        checkboxes.checked  = selectAll.checked
+function checkAll(checkAll){
+    let checkboxes=document.getElementsByName("Work check");
+    let checkboxes2=document.getElementsByName("Work check inner");
+
+
+    console.log(checkboxes);
+    checkboxes.forEach((checkbox)=>{
+        console.log(checkbox    );
+        checkbox.checked=checkAll.checked;
     })
+
+    
+    console.log(checkboxes2);
+    checkboxes2.forEach((checkbox)=>{
+        console.log(checkbox    );
+        checkbox.checked=checkAll.checked;
+    })
+
+    const query = 'input[name="Work check inner"]:checked';
+    const selected = document.querySelectorAll(query);
+
+    const selectedcount =
+          selected.length;
+
+    document.getElementById('complete-view').innerHTML
+    = selectedcount;
 }
 
 
 function alertsave(){
-    console.log = ("alert");
+    alert("아직 저장기능을 이용 할 수 없습니다.");
 }

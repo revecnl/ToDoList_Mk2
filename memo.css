@@ -1,0 +1,22 @@
+.MemoNote{
+    margin-left: 100px;
+    margin-top:50px;
+}
+
+#memo{
+    width: 600px;
+    height: 600px;
+}
+
+#memo_summit{
+    border: 1px solid black;
+    width: 50px;
+}
+
+#memo_btn{
+    padding-left: 560px;
+}
+
+textarea::placeholder{
+    font-size: 24px;
+}

@@ -19,7 +19,7 @@
             <input type='text' id="object-view"></input>
         </header>
         <main class="todolist-body">
-            <input type="checkbox" id="check-box" name="Work check" onclick="selectAll(this)"> </input>
+            <input type="checkbox" id="check-box" name="Work check" onclick="checkAll(this)"></input>
             <span id="date-box">Date</span>
             <span id="work-list-box">Work</span>
         </main>
@@ -43,9 +43,14 @@
     </div>    
 
 <!-- 메모장 -->
-    <div class="MemoNotr">
-
+<form class="MemoNote">
+    <div id="note">
+        <textarea cols="500" rows="30" id="memo" placeholder=" write memo here..."></textarea>
     </div>
+    <div id="memo_btn">
+        <input type="button" value="Save" onclick='alertsave()'>
+    </div>
+</form>
 
 
 </body>
